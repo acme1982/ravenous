@@ -1,7 +1,16 @@
 import React from 'react';
+import BusinessList from '../Business/BusinessList';
+import SearchBar from '../SearchBar/SearchBar';
+import '../App/App.css';
 class App extends React.Component {
 	render() {
-		return <h1>Hello world!!</h1>;
+		return (
+			<div className="App">
+				<h1>ravenous</h1>
+				<SearchBar />
+				<BusinessList />
+			</div>
+		);
 	}
 }
 
