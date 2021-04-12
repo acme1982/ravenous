@@ -1,5 +1,5 @@
 import React from 'react';
-import '../SearchBar/searchBar.css';
+import './searchBar.css';
 
 const sortByOptions = {
 	'Best Match': 'best_match',
@@ -9,17 +9,21 @@ const sortByOptions = {
 
 //const api = 'https://api.yelp.com/v3/businesses/search?term={}&location={city}&categories={for example french, bars}&limit=10&sort_by={rating default best match}';
 
-const renderSortByOptions = () => {
-	return Object.keys(sortByOptions).map((sortByOption) => {
-		const sortByOptionValue = sortByOptions[sortByOption];
-		<li key={sortByOptionValue}>{sortByOption}</li>;
-	});
-};
 class SearchBar extends React.Component {
+	renderSortByOptions = () => {
+		return Object.keys(sortByOptions).map((sortByOption) => {
+			const sortByOptionValue = sortByOptions[sortByOption];
+			return <li key={sortByOptionValue}>{sortByOption}</li>;
+		});
+	};
+
 	render() {
 		return (
 			<div className="SearchBar">
-				<div className="SearchBar-sort-options">{renderSortByOptions()}</div>
+				{console.log(this.renderSortByOptions())}
+				<div className="SearchBar-sort-options">
+					<ul>{this.renderSortByOptions()}</ul>
+				</div>
 				<div className="SearchBar-fields">
 					<input placeholder="Search Businesses" />
 					<input placeholder="Where?" />

@@ -1,7 +1,7 @@
 import React from 'react';
 import BusinessList from '../Business/BusinessList';
 import SearchBar from '../SearchBar/SearchBar';
-import '../App/App.css';
+import '../App/app.css';
 class App extends React.Component {
 	render() {
 		return (
