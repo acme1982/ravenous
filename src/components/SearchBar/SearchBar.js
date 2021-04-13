@@ -10,6 +10,14 @@ const sortByOptions = {
 //const api = 'https://api.yelp.com/v3/businesses/search?term={}&location={city}&categories={for example french, bars}&limit=10&sort_by={rating default best match}';
 
 class SearchBar extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			term: '',
+			location: '',
+			sort_by: 'best_match',
+		};
+	}
 	renderSortByOptions = () => {
 		return Object.keys(sortByOptions).map((sortByOption) => {
 			const sortByOptionValue = sortByOptions[sortByOption];
